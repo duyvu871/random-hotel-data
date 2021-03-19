@@ -17,7 +17,7 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
 function renderHandle(data) {
     const dotEl = document.querySelector('#changeSlide')
     const imgEl = document.querySelector('.slideshow-container')
-    const dataImage = data?.roomImages[0]?.images
+    const dataImage = data?.roomImages[2]?.images
     const getUrlOfData = (dataUrl = data,i = 0,i2 = 0,i3 = 0)=>{
         return dataUrl?.roomImages[i]?.images[i2]?.baseUrl?.replace(
             '{size}',

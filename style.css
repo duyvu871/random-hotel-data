@@ -5,7 +5,9 @@
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: auto; }
+  margin: auto;
+  aspect-ratio: 1/2;
+}
 
 /* Hide the images by default */
 .mySlides {
@@ -15,17 +17,18 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: rgba(0, 0, 0, 0.8);
+  color: white;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 45px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  top: 100px; }
+  text-shadow: black 0em 0em 0.1em;
+   }
 
 /* Position the "next button" to the right */
 .next {
@@ -87,13 +90,23 @@
     opacity: .4; }
   to {
     opacity: 1; } }
-@media only screen and (min-width: 500px) and (min-width: 700px) {
+@media only screen and (min-width: 700px) and (min-height: 800px){
   .prev, .next {
     padding: 30px;
-    top: 123px; } }
+    /* top: 20vh; */
+  } } 
 @media only screen and (max-width: 400px) {
   .prev, .next {
-    padding: 21px;
-    top: 53px; } }
-
+    padding: 10px;
+    top: 44%;}
+   }
+@media only screen and (min-width:812px) and (max-height: 375px) {
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto; 
+    width: 60%;
+    
+  }
+}
 /*# sourceMappingURL=style.css.map */
