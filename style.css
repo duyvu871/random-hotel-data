@@ -6,7 +6,7 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
-  aspect-ratio: 1/2;
+  width: 80%;
 }
 
 /* Hide the images by default */
