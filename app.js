@@ -27,13 +27,13 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
                 <div class="mySlides fade">
                 <div class="numberText">${index + 1} / ${dataLength}</div>
                 <img src="${curr.baseUrl.replace("{size}",curr.sizes[0].suffix)}" style="width:100%">
-                <div class="text">Caption Text</div>
+                <div class="text">Hello You</div>
                 </div>
             `],
             []
         )
         const dotTagHTMl = dataImage.reduce((acc,curr,index)=> 
-            [...acc,`<span class="dot" onclick="currentSlide(${index+1})"></span>`],
+            [...acc,`<div class="dot" onclick="currentSlide(${index+1})"></div>`],
             []
         )
         dotEl.innerHTML = dotTagHTMl.join('') 
@@ -65,4 +65,5 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
       }
       function currentSlide(n) {
         showSlides(slideIndex = n);
+        console.log(1);
       }
