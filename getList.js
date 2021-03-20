@@ -26,4 +26,31 @@ document.addEventListener('DOMContentLoaded',()=>{
         </svg> 
     </div> 
 `
+    lazyLoad();
 })
+function lazyLoad() {
+    document.querySelector('.loading-rest').innerHTML=`
+    <ul class="loader">
+    <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+    </li>
+    <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+    </li>
+    <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+    </li>
+    <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+    </li>
+    <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+    </li>
+    </ul>
+    `
+}

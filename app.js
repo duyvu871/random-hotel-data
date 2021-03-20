@@ -6,6 +6,7 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
         }
     }).then(response => response.json())
     .then(result => {
+        document.querySelector('body').removeChild(document.querySelector('.loading-rest'))
         renderHandle(result);
         slideMoving(result);  
     }).catch(err => {
