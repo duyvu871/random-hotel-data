@@ -64,8 +64,4 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
       }
       function currentSlide(n) {
         showSlides(slideIndex = n);
-      }  
-
-
-
-
+      }
