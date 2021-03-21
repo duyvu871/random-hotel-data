@@ -7,22 +7,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="boxInformation.css">
+    <script src="lazyLoad.js"></script>
     <script src="getList.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 </head>
 <body> 
     <div class="loading-rest"></div>
     <div class="wave"></div>
     <div class="slide">
         <div class="slideshow-container"></div> 
-    </div>
-    <br>
-    <div style="text-align:center; position: relative;z-index: 1000;" id="changeSlide">
-        <br>
-        <div style="text-align:center" id="changeSlide">
+        <div style="text-align:center; position: relative;z-index: 1000;" id="changeSlide">
         </div>
     </div>
-    <div class="information-hotel">
+    <br>
+    <div id="showConvert">
+        <ul id="d0fgr">
+        </ul>
     </div>
     <script src="app.js"></script>
+    <script src="getList.js"></script>
 </body>
 </html>

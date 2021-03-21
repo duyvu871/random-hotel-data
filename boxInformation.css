@@ -1,0 +1,35 @@
+
+  .information-hotel{
+    width: 100%;
+    height: auto;
+    background: rgb(255 255 255);
+    margin: auto;
+    border-radius: 5%;
+    position: relative;
+    z-index: 1000;
+    word-wrap: break-word;
+  }
+  .information-hotel ul li input:checked + ul {
+   display: block;
+}
+.information-hotel ul li input {
+    display: none;
+}
+.information-hotel ul li label h2:active{
+    color: #f65f8d;
+}
+.information-hotel ul li {
+    display: flex;
+    flex-direction: row;      
+}
+.information-hotel ul li:nth-child(4){
+
+}
+.information-hotel ul li ul{
+    display: none;
+    margin-top: 30px;
+    padding-left: 15px;
+}
+.information-hotel ul li ul span {
+   font-weight: bolder;
+}

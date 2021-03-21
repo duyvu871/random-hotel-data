@@ -1,21 +1,26 @@
-fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040", {
+function fetching(id,data) {
+    let bodyNode = document.querySelector('body')
+    fetch(`https://hotels-com-free.p.rapidapi.com/nice/image-catalog/v2/hotels/${id}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "e136fafd08msh8b7023afea865c9p11c5ccjsndd6cb20fd0fe",
-            "x-rapidapi-host": "hotels4.p.rapidapi.com"
+            "x-rapidapi-host": "hotels-com-free.p.rapidapi.com"
         }
     }).then(response => response.json())
     .then(result => {
-        document.querySelector('body').removeChild(document.querySelector('.loading-rest'))
+        bodyNode.removeChild(bodyNode.childNodes[0])
         renderHandle(result);
-        slideMoving(result);  
+        slideMoving();
+        renderList(data);
+        document.querySelector('#showConvert').classList.add('information-hotel')  
     }).catch(err => {
 	    console.error(err);
     });
+}
     function renderHandle(data) {
         const dotEl = document.querySelector('#changeSlide')
         const imgEl = document.querySelector('.slideshow-container')
-        const dataImage = data?.roomImages[2]?.images
+        const dataImage = data.hotelImages
         const getUrlOfData = (dataUrl = data,i = 0,i2 = 0,i3 = 0)=>{
             return dataUrl?.roomImages[i]?.images[i2]?.baseUrl?.replace(
                 '{size}',
@@ -65,5 +70,53 @@ fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040"
       }
       function currentSlide(n) {
         showSlides(slideIndex = n);
-        console.log(1);
       }
+
+function renderList(data) {
+    const key = Object.keys(data)
+    let id = 0
+    const htmls = `
+            <li>
+                <label class="menu" for="hi${++id}">
+                    <h2>Address</h2>
+                </label>
+                <input type="checkbox" id="hi${id}">
+                <ul>
+                    <li><span>Local country:</span>${data.address.countryName}</li>
+                    <li><span>Local city:</span>${data.address.locality}</li>
+                    <li><span>Local street:</span>${data.address.streetAddress}</li>
+                </ul>
+            </li>
+            <li>
+                <label class="menu" for="hi${++id}">
+                    <h2>Rating</h2>
+                </label>
+                <input type="checkbox" id="hi${id}">
+                <ul>
+                    <li><span>BadgeText:</span>${data.guestReviews.badgeText}</li>
+                    <li><span>Rating:</span><p style="margin: 0; font-weight:bolder;color:purple">${data.guestReviews.rating}</p></li>
+                    <li><span>Total:</span>${data.guestReviews.total} people</li>
+                </ul>
+            </li>
+            <li>
+                <label class="menu" for="hi${++id}">
+                    <h2>Cost</h2>
+                </label>
+                <input type="checkbox" id="hi${id}">
+                <ul>
+                    <li><span>Normal:</span> ${data.ratePlan.price.current}/night</li>
+                </ul>
+            </li>
+            <li>
+                <label class="menu" for="hi${++id}">
+                    <h2>LandMarks</h2>
+                </label>
+                <input type="checkbox" id="hi${id}">
+                <ul>
+                    <li><span>Distance:</span>${data.landmarks[0].distance} for ${data.landmarks[0].label}</li>
+                    <li><span>Distance:</span>${data.landmarks[1].distance} for ${data.landmarks[1].label}</li>
+                </ul>
+            </li>
+        `
+    document.querySelector('#d0fgr').innerHTML = htmls
+}
