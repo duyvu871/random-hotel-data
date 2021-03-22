@@ -1,10 +1,10 @@
 function fetching(id,data) {
     let bodyNode = document.querySelector('body')
-    fetch(`https://hotels-com-free.p.rapidapi.com/nice/image-catalog/v2/hotels/${id}`, {
+    fetch(`https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=${id}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "e136fafd08msh8b7023afea865c9p11c5ccjsndd6cb20fd0fe",
-            "x-rapidapi-host": "hotels-com-free.p.rapidapi.com"
+            "x-rapidapi-key": "9d2cfc39c7msh3f991e24c5ae59cp1d1a91jsn16e4ec494996",
+            "x-rapidapi-host": "hotels4.p.rapidapi.com"
         }
     }).then(response => response.json())
     .then(result => {

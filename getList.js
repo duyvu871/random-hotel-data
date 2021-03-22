@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded',()=>{
-    fetch("https://hotels-com-free.p.rapidapi.com/srle/listing/v1/brands/hotels.com?lat=37.788719679657554&lon=-122.40057774847898&checkIn=2021-01-27&checkOut=2021-01-28&rooms=1&locale=en_US&currency=USD&pageNumber=1", {
+    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=1506246&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "e136fafd08msh8b7023afea865c9p11c5ccjsndd6cb20fd0fe",
-            "x-rapidapi-host": "hotels-com-free.p.rapidapi.com"
+            "x-rapidapi-key": "9d2cfc39c7msh3f991e24c5ae59cp1d1a91jsn16e4ec494996",
+            "x-rapidapi-host": "hotels4.p.rapidapi.com"
         }
     })
     .then(response => response.json())
