@@ -33,3 +33,38 @@
 .information-hotel ul li ul span {
    font-weight: bolder;
 }
+.btn-toggle{
+    margin-top: 47px;
+}
+.button:active {
+    /* display: none; */
+    transform: translate3d(5px, 8px, 10px);
+}
+.button {
+    width: 100px;
+    height: 50px;
+    background: rgb(138 43 226 / 63%);
+    /* border-radius: 10px; */
+    position: relative;
+    top: -13px;
+    left: 5px;
+    color: rgb(255 255 255);
+    z-index: 1000;
+    border: 1px solid rgb(0 0 255);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .3s;
+}
+.shadow-box {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    background: rgb(138 43 226);
+    bottom: 56px;
+    left: 9px;
+    margin-left: auto;
+    margin-right: auto;
+}

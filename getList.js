@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
+    start()
+})
+function start() {
     fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=1506246&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE", {
         "method": "GET",
         "headers": {
@@ -16,5 +19,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     }).catch(err => {
         console.error(err);
     });
-})
+}
 

@@ -12,7 +12,11 @@ function fetching(id,data) {
         renderHandle(result);
         slideMoving();
         renderList(data);
-        document.querySelector('#showConvert').classList.add('information-hotel')  
+        document.querySelector('#showConvert').classList.add('information-hotel')
+        document.querySelector('.btn-toggle').innerHTML = `<div class="button">Refresh</div>
+        <div class="shadow-box"></div>` 
+        let btn =  document.querySelector('.button')
+        btn.addEventListener('click',once)
     }).catch(err => {
 	    console.error(err);
     });
@@ -119,4 +123,19 @@ function renderList(data) {
             </li>
         `
     document.querySelector('#d0fgr').innerHTML = htmls
+}
+function once(btn) {
+    start()
+    btn.target.removeEventListener('click',once)
+    refresh(btn)
+}
+function refresh(btn,bol = true) {
+    btn.target.addEventListener('click',alertByClick)
+    setTimeout(()=>{
+        btn.target.removeEventListener('click',alertByClick)
+        btn.target.addEventListener('click',once)
+    },10000)
+}
+function alertByClick() {
+    alert('Mày nhấn nhanh quá đấy hãy đợi 10s')
 }
